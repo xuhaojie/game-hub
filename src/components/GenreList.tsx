@@ -8,7 +8,7 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import useGenre, { Genre } from "../hooks/useGenres";
+import useGenre from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 import { GameQueryContext } from "../App";
 
@@ -38,6 +38,9 @@ const GenreList = () => {
                 textAlign="left"
                 fontWeight={
                   gameQuery.genre?.id === genre.id ? "bold" : "normal"
+                }
+                colorScheme={
+                  gameQuery.genre?.id === genre.id ? "green" : "white"
                 }
                 onClick={() => setGameQuery({ ...gameQuery, genre: genre })}
                 fontSize="lg"
